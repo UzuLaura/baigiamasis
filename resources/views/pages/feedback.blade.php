@@ -1,13 +1,15 @@
 @extends('main')
 
 @section('content')
-    {{--Feedback Table START--}}
-    <vue-feedback-table></vue-feedback-table>
-    {{--Feedback Table END--}}
+    <div class="wrapper">
+        {{--Feedback Table START--}}
+        <vue-feedback-table></vue-feedback-table>
+        {{--Feedback Table END--}}
 
-    @auth()
-        {{--Feedback Form START--}}
-        <vue-feedback-form></vue-feedback-form>
-        {{--Feedback Form END--}}
-    @endauth
+        @auth()
+            {{--Feedback Form START--}}
+            <vue-feedback-form></vue-feedback-form>
+            {{--Feedback Form END--}}
+        @endauth
+    </div>
 @endsection

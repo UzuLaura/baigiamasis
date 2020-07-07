@@ -2,6 +2,10 @@
 
 @section('content')
     <vue-hero></vue-hero>
-    <vue-service-card></vue-service-card>
+    <div class="wrapper services">
+        @for($x=0; $x< 3; $x++)
+            <vue-service-card></vue-service-card>
+        @endfor
+    </div>
     <vue-map></vue-map>
 @endsection

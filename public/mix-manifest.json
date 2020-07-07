@@ -1,5 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/style.css": "/css/style.css"
+    "/css/style.css": "/css/style.css",
+    "/fonts/Sen-Bold.ttf": "/fonts/Sen-Bold.ttf",
+    "/fonts/Sen-ExtraBold.ttf": "/fonts/Sen-ExtraBold.ttf",
+    "/fonts/Sen-Regular.ttf": "/fonts/Sen-Regular.ttf"
 }

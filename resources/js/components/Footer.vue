@@ -1,6 +1,6 @@
 <template>
     <footer>
-        I'm footer.
+        © 2019. Laura Užusienė, all rights reserved.
     </footer>
 </template>
 

@@ -1914,6 +1914,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Service');
@@ -1981,8 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Hero');
@@ -2000,10 +2000,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -37580,9 +37576,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", [_vm._v("\n    I'm Service Card.\n")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card" }, [
+      _c("img", {
+        attrs: {
+          src:
+            "https://www.planetfitness.com/sites/default/files/feature-image/xbreak-workout_602724.jpg.pagespeed.ic.v8byD7su-e.jpg",
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Paslauga")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at blanditiis culpa cum dolores ea esse facere impedit maiores nesciunt nihil provident ..."
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37604,7 +37623,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", [_vm._v("\n    I'm footer.\n")])
+  return _c("footer", [
+    _vm._v("\n    © 2019. Laura Užusienė, all rights reserved.\n")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37652,7 +37673,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", [_vm._v("\n    I'm hero.\n")])
+  return _c("div", { staticClass: "hero" })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37676,7 +37697,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", [_vm._v("\n    I'm Map.\n")])
+  return _c("iframe", {
+    staticClass: "map",
+    staticStyle: { border: "0" },
+    attrs: {
+      src:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2304.2194261567283!2d25.335696616059657!3d54.72335507837756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd96e7d814e149%3A0xdd7887e198efd4c7!2sSaul%C4%97tekio%20al.%2015%2C%20Vilnius%2010221!5e0!3m2!1slt!2slt!4v1594123015710!5m2!1slt!2slt",
+      frameborder: "0",
+      allowfullscreen: "",
+      "aria-hidden": "false",
+      tabindex: "0"
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
