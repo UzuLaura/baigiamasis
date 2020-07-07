@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/feedback', 'FeedbackController@index')->name('feedback');
+Route::get('/atsiliepimai', 'FeedbackController@index')->name('feedback');
+Route::post('/atsiliepimai/send', 'FeedbackController@store')->middleware('auth');

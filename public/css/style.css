@@ -12,8 +12,7 @@
 }
 
 body {
-    background-color: #2e2e2e;
-    color: white;
+    background-color: #E6DAF2;
 }
 
 .wrapper {
@@ -21,11 +20,20 @@ body {
     max-width: 800px;
 }
 
+button {
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
 /* GLOBAL STYLE END */
 /* ------------------------------------------- */
 /* NAVBAR STYLE START */
 header {
-    background-color: #E50435;
+    background-color: #F7BB52;
+    border-bottom: 1px solid #AAA3B5;
 }
 
 .navbar {
@@ -36,8 +44,13 @@ header {
 }
 
 .navbar a {
-    color: #e6e2e6;
+    display: inline-block;
+    color: #fff;
     text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #e6e2e6;
 }
 
 .navbar-left .nav-item {
@@ -49,26 +62,51 @@ header {
 }
 
 .navbar button {
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: #ed0440;
-    color: white;
+    border: 1px solid #AAA3B5;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #3C3C3C;
     padding: 10px 15px;
-    cursor: pointer;
 }
 
 .navbar button:hover {
-    background-color: #d9043f;
+    background-color: #e6e2e6;
 }
 
 /* NAVBAR STYLE END */
 /* ------------------------------------------- */
+/* AUTH STYLE START */
+.auth-card {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 5px;
+}
+
+.form-group button {
+    padding: 5px;
+}
+
+.auth-card small {
+    color: red;
+}
+
+/* AUTH STYLE END */
+/* ------------------------------------------- */
 /* HERO STYLE START */
 .hero {
     height: 300px;
-    width: 100vw;
-    margin: 0;
-    background: black url("https://covergirlshapewear.com/wp-content/uploads/2018/12/7-Must-Haves-for-the-Gym-1000x400.jpg") no-repeat center;
+    width: 100%;
+    background: black url("../images/24744.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -84,9 +122,9 @@ header {
 
 .card {
     width: 25%;
-    background-color: #474747;
-    color: #c0c0c0;
-    border: 1px solid gray;
+    background-color: #fff;
+    color: #3C3C3C;
+    border: 1px solid #D6CCE4;
     height: 300px;
     overflow-y: hidden;
 }
@@ -99,10 +137,12 @@ header {
 .card h3 {
     text-align: center;
     margin: 10px 5px;
+    font-size: 20px;
 }
 
 .card p {
     margin: 0 5px;
+    font-size: 15px;
 }
 
 /* SERVICES STYLE END */
@@ -115,18 +155,52 @@ header {
 
 /* MAP STYLE END */
 /* ------------------------------------------- */
+/* FEEDBACK PAGE STYLE START */
+.comment-form {
+    background-color: white;
+    padding: 10px;
+    color: black;
+}
+
+.feedback {
+    margin: 10px 0;
+}
+
+/* COMMENT FORM STYLE END */
+/* ------------------------------------------- */
+/* TABLE FORM STYLE START */
+table {
+    margin: 10px 0;
+    background-color: white;
+}
+
+th, td, table {
+    border: 1px solid #D6CCE4;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
+
+th:first-child,
+th:last-child,
+td:first-child,
+td:last-child {
+    width: 50px;
+}
+
+/* TABLE FORM STYLE END */
+/* ------------------------------------------- */
 /* FOOTER STYLE START */
 footer {
-    background-color: #E50435;
+    background-color: #9C95A5;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #e6e2e6;
 }
 
 /* FOOTER STYLE END */
 /* ------------------------------------------- */
-
 /* RESPONSIVE START */
 @media (max-width: 400px) {
     .hero {
