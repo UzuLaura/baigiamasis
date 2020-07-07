@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/atsiliepimai', 'FeedbackController@index')->name('feedback');
-Route::post('/atsiliepimai/send', 'FeedbackController@store')->middleware('auth');
+Route::prefix('atsiliepimai')->group(function () {
+    Route::get('/', 'FeedbackController@index')->name('feedback');
+    Route::post('/send', 'FeedbackController@store')->middleware('auth');
+});
