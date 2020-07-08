@@ -117,7 +117,7 @@
                             this.error = message.fail.comment[0].charAt(0).toUpperCase() + message.fail.comment[0].slice(1);
                         } else {
                             this.feedbacks.push(message.success);
-                            console.log(message.success);
+                            this.comment = '';
                         }
                     })
                     .catch((error) => {
