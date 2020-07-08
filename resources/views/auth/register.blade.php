@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title', ' | ' . __('titles.register'))
+@section('title', ' | ' . ucfirst(__('titles.register')))
 
 @section('content')
     <div class="wrapper">
         <div class="auth-card">
 
             {{--Section Header START--}}
-            <h2>{{ __('titles.register') }}</h2>
+            <h2>{{ ucfirst(__('titles.register')) }}</h2>
             {{--Section Header END--}}
 
             {{--Register Form START--}}
@@ -16,7 +16,7 @@
 
                 {{--Name Input Group START--}}
                 <div class="form-group">
-                    <label for="name">{{ __('titles.name') }}</label>
+                    <label for="name">{{ ucfirst(__('titles.name')) }}</label>
                     <input id="name"
                            type="text"
                            name="name"
@@ -33,7 +33,7 @@
 
                 {{--Surname Input Group END--}}
                 <div class="form-group">
-                    <label for="surname">{{ __('titles.surname') }}</label>
+                    <label for="surname">{{ ucfirst(__('titles.surname')) }}</label>
                     <input id="surname"
                            type="text"
                            name="surname"
@@ -49,7 +49,7 @@
 
                 {{--Email Input Group START--}}
                 <div class="form-group">
-                    <label for="email">{{ ucfirst(__('validation.attributes.email')) }}</label>
+                    <label for="email">{{ ucfirst(__('titles.email')) }}</label>
                     <input id="email"
                            type="email"
                            name="email"
@@ -65,7 +65,7 @@
 
                 {{--Phone Number Input Group STARt--}}
                 <div class="form-group">
-                    <label for="phone-number">{{ __('titles.phone-number') . ' (' . __('titles.optional') . ')' }}</label>
+                    <label for="phone-number">{{ ucfirst(__('titles.phone-number')) . ' (' . __('titles.optional') . ')' }}</label>
                     <input id="phone-number"
                            type="text"
                            name="phone-number"
@@ -80,7 +80,7 @@
 
                 {{--Address Input Group START--}}
                 <div class="form-group">
-                    <label for="address">{{ ucfirst(__('validation.attributes.address')) . ' (' . __('titles.optional') . ')' }}</label>
+                    <label for="address">{{ ucfirst(__('titles.address')) . ' (' . __('titles.optional') . ')' }}</label>
                     <input id="address"
                            type="text"
                            name="address"
@@ -95,7 +95,7 @@
 
                 {{--Password Input Group START--}}
                 <div class="form-group">
-                    <label for="password">{{ ucfirst(__('validation.attributes.password')) }}</label>
+                    <label for="password">{{ ucfirst(__('titles.password')) }}</label>
                     <input id="password"
                            type="password"
                            name="password"
@@ -110,7 +110,7 @@
 
                 {{--Password Repeat Input Group START--}}
                 <div class="form-group">
-                    <label for="password-confirm">{{ __('titles.repeat_password') }}</label>
+                    <label for="password-confirm">{{ ucfirst(__('titles.repeat_password')) }}</label>
                     <input id="password-confirm"
                            type="password"
                            class="form-control"
@@ -123,7 +123,7 @@
                 {{--Submit Button START--}}
                 <div class="form-group">
                     <button type="submit">
-                        {{ __('titles.register') }}
+                        {{ ucfirst(__('titles.register')) }}
                     </button>
                 </div>
                 {{--Submit Button END--}}

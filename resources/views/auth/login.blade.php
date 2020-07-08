@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title', ' | ' . __('titles.login'))
+@section('title', ' | ' . ucfirst(__('titles.login')))
 
 @section('content')
     <div class="wrapper">
         <div class="auth-card">
 
             {{--Section Header START--}}
-            <h2>{{ __('titles.login') }}</h2>
+            <h2>{{ ucfirst(__('titles.login')) }}</h2>
             {{--Section Header END--}}
 
             {{--Login Form START--}}
@@ -16,7 +16,7 @@
 
                 {{--Email Input Group START--}}
                 <div class="form-group">
-                    <label for="email">{{ ucfirst(__('validation.attributes.email')) }}</label>
+                    <label for="email">{{ ucfirst(__('titles.email')) }}</label>
                     <input id="email"
                            type="email"
                            name="email"
@@ -33,7 +33,7 @@
 
                 {{--Password Input Group START--}}
                 <div class="form-group">
-                    <label for="password">{{ ucfirst(__('validation.attributes.password')) }}</label>
+                    <label for="password">{{ ucfirst(__('titles.password')) }}</label>
                     <input id="password"
                            type="password"
                            name="password"
@@ -52,14 +52,14 @@
                        id="remember"
                         {{ old('remember') ? 'checked' : '' }}>
                 <label for="remember">
-                    {{ __('titles.remember_me') }}
+                    {{ ucfirst(__('titles.remember_me')) }}
                 </label>
                 {{--Remember Me Token END--}}
 
                 {{--Submit Button START--}}
                 <div class="form-group">
                     <button type="submit">
-                        {{ __('titles.login') }}
+                        {{ ucfirst(__('titles.login')) }}
                     </button>
                 </div>
                 {{--Submit Button END--}}

@@ -79,7 +79,7 @@ class FeedbackController extends Controller
             'fail' => $validation
         ];
 
-        if ($validation === true) {
+        if ($validation === true && auth()->user()) {
             // Create new comment
             $feedback = $this->create($request);
 

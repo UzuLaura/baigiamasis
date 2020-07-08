@@ -15,8 +15,12 @@ return [
     'feedback' => 'Atsiliepimai',
     'logout' => 'Atsijungti',
     'repeat_password' => 'Pakartoti slaptažodį',
-    'name' => 'Vardas',
+    'email' => 'El. pašto adresas',
     'surname' => 'Pavardė',
+    'name' => 'Vardas',
+    'password' => 'Slaptažodis',
     'phone-number' => 'Telefono numeris',
+    'address' => 'Adresas',
+    'comment' => 'Komentaras',
     'optional' => 'neprivalomas'
 ];
