@@ -41,7 +41,7 @@
             <!--Comment Form START-->
             <form v-if="user" v-on:submit.prevent="sendData">
                 <div class="form-group">
-                    <label for="comment">Komentaras 555</label>
+                    <label for="comment">Komentaras</label>
 
                     <!--Textarea START-->
                     <textarea v-model="comment"

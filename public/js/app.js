@@ -876,7 +876,7 @@ var render = function() {
             [
               _c("div", { staticClass: "form-group" }, [
                 _c("label", { attrs: { for: "comment" } }, [
-                  _vm._v("Komentaras 555")
+                  _vm._v("Komentaras")
                 ]),
                 _vm._v(" "),
                 _c("textarea", {

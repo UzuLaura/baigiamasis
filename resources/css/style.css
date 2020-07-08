@@ -184,7 +184,7 @@ th:first-child,
 th:last-child,
 td:first-child,
 td:last-child {
-    width: 50px;
+    width: 100px;
 }
 
 /* TABLE FORM STYLE END */
@@ -225,6 +225,13 @@ footer {
     .navbar {
         height: auto;
         padding: 5px;
+    }
+
+    th:first-child,
+    th:last-child,
+    td:first-child,
+    td:last-child {
+        width: 50px;
     }
 
     .hero {
