@@ -1,0 +1,17 @@
+table {
+    margin: 10px 0;
+    background-color: white;
+}
+
+th, td, table {
+    border: 1px solid #D6CCE4;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
+
+th:first-child,
+th:last-child,
+td:first-child,
+td:last-child {
+    width: 100px;
+}

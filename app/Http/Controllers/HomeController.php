@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Services;
 
 class HomeController extends Controller
 {
@@ -13,6 +13,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('pages.index')->with([
+            'services' => $this->getServices()
+        ]);
+    }
+
+    /**
+     * Get data from DB Services table
+     *
+     * @return mixed
+     */
+    public function getServices()
+    {
+        return Services::take(3)->inRandomOrder()->get();
     }
 }

@@ -1,8 +1,7 @@
 /* FONTS START */
 @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;1,700;1,800&display=swap');
 /* FONTS END */
-/* ------------------------------------------- */
-/* GLOBAL STYLE START */
+
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +27,57 @@ button {
     color: red;
 }
 
-/* GLOBAL STYLE END */
-/* ------------------------------------------- */
-/* NAVBAR STYLE START */
+.map {
+    width: 100%;
+    height: 300px;
+}
+
+footer {
+    background-color: #9C95A5;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e6e2e6;
+}
+.auth-card {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 5px;
+}
+
+.form-group button {
+    padding: 5px;
+}
+
+.auth-card small {
+    color: red;
+}
+.comment-form {
+    background-color: white;
+    padding: 10px;
+    color: black;
+}
+
+.feedback {
+    margin: 10px 0;
+}
+.hero {
+    height: 300px;
+    width: 100%;
+    background: black url("../images/24744.jpg") no-repeat center;
+    background-size: cover;
+}
 header {
     background-color: #F7BB52;
     border-bottom: 1px solid #AAA3B5;
@@ -72,47 +119,6 @@ header {
 .navbar button:hover {
     background-color: #e6e2e6;
 }
-
-/* NAVBAR STYLE END */
-/* ------------------------------------------- */
-/* AUTH STYLE START */
-.auth-card {
-    width: 50%;
-    margin: 10px auto;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 5px;
-}
-
-.form-group button {
-    padding: 5px;
-}
-
-.auth-card small {
-    color: red;
-}
-
-/* AUTH STYLE END */
-/* ------------------------------------------- */
-/* HERO STYLE START */
-.hero {
-    height: 300px;
-    width: 100%;
-    background: black url("../images/24744.jpg") no-repeat center;
-    background-size: cover;
-}
-
-/* HERO STYLE END */
-/* ------------------------------------------- */
-/* SERVICES STYLE START */
 .services {
     margin: 20px auto;
     display: flex;
@@ -144,31 +150,6 @@ header {
     margin: 0 5px;
     font-size: 15px;
 }
-
-/* SERVICES STYLE END */
-/* ------------------------------------------- */
-/* MAP STYLE START */
-.map {
-    width: 100%;
-    height: 300px;
-}
-
-/* MAP STYLE END */
-/* ------------------------------------------- */
-/* FEEDBACK PAGE STYLE START */
-.comment-form {
-    background-color: white;
-    padding: 10px;
-    color: black;
-}
-
-.feedback {
-    margin: 10px 0;
-}
-
-/* COMMENT FORM STYLE END */
-/* ------------------------------------------- */
-/* TABLE FORM STYLE START */
 table {
     margin: 10px 0;
     background-color: white;
@@ -186,22 +167,6 @@ td:first-child,
 td:last-child {
     width: 100px;
 }
-
-/* TABLE FORM STYLE END */
-/* ------------------------------------------- */
-/* FOOTER STYLE START */
-footer {
-    background-color: #9C95A5;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #e6e2e6;
-}
-
-/* FOOTER STYLE END */
-/* ------------------------------------------- */
-/* RESPONSIVE START */
 @media (max-width: 400px) {
     .navbar-left,
     .navbar-right {
@@ -239,10 +204,8 @@ footer {
     }
 
     .card {
-        width: 90%;
+        width: 80%;
         margin: 10px auto;
     }
 
 }
-
-/* RESPONSIVE END */
