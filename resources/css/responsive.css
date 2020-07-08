@@ -1,4 +1,4 @@
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .navbar-left,
     .navbar-right {
         display: flex;
@@ -34,9 +34,17 @@
         height: 150px;
     }
 
+    .services {
+        height: auto;
+    }
+
     .card {
         width: 80%;
+        height: 300px;
         margin: 10px auto;
     }
 
+    .card img {
+        height: 60%;
+    }
 }

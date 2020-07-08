@@ -48,7 +48,7 @@
                               id="comment"
                               name="comment"
                               rows="7"
-                              cols="50"></textarea>
+                              cols="30"></textarea>
                     <!--Textarea END-->
 
                     <small class="error">{{ error }}</small>
@@ -80,7 +80,7 @@
                 path: window.location,
                 comment: '',
                 error: '',
-                disabled: false,
+                disabled: true,
                 newFeedbacks: this.feedbacks
             }
         },
