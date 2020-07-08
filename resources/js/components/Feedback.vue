@@ -25,7 +25,7 @@
                 <td><h4>{{ feedback.name }}</h4></td>
                 <td>{{ feedback.comment }}</td>
                 <td>
-                    <small>{{ feedback.created_at }}</small>
+                    <small>{{ formatDate(feedback.created_at) }}</small>
                 </td>
             </tr>
             <!--Table Row END-->
@@ -41,7 +41,7 @@
             <!--Comment Form START-->
             <form v-if="user" v-on:submit.prevent="sendData">
                 <div class="form-group">
-                    <label for="comment">Komentaras</label>
+                    <label for="comment">Komentaras 555</label>
 
                     <!--Textarea START-->
                     <textarea v-model="comment"
@@ -113,7 +113,7 @@
                     })
                     .then(data => {
                         const message = JSON.parse(data);
-                        if(message.fail) {
+                        if (message.fail) {
                             this.error = message.fail.comment[0].charAt(0).toUpperCase() + message.fail.comment[0].slice(1);
                         } else {
                             this.feedbacks.push(message.success);
@@ -124,6 +124,11 @@
                         this.error = error;
                     });
             },
+            formatDate: function (date) {
+                const newDate = new Date(Date.parse(date));
+
+                return newDate.toLocaleString('lt-LT');
+            }
         },
     }
 </script>

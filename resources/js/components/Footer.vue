@@ -1,6 +1,6 @@
 <template>
     <footer>
-        © {{ this.date.getFullYear() }}. Laura Užusienė, all rights reserved.
+        © {{ this.date.getFullYear() }}. Laura Užusienė, visos teisės saugomos.
     </footer>
 </template>
 
