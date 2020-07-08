@@ -1,120 +1,136 @@
 @extends('main')
 
+@section('title', ' | ' . ucfirst(__('titles.register')))
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <div class="wrapper">
+        <div class="auth-card">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+            {{--Section Header START--}}
+            <h2>{{ ucfirst(__('titles.register')) }}</h2>
+            {{--Section Header END--}}
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            {{--Register Form START--}}
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                {{--Name Input Group START--}}
+                <div class="form-group">
+                    <label for="name">{{ ucfirst(__('titles.name')) }}</label>
+                    <input id="name"
+                           type="text"
+                           name="name"
+                           value="{{ old('name') }}"
+                           required
+                           autocomplete="name"
+                           autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname">
-
-                                @error('surname')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone-number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="phone-number" type="text" class="form-control @error('phone-number') is-invalid @enderror" name="phone-number" value="{{ old('phone-number') }}" autocomplete="phone-number">
-
-                                @error('phone-number')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address">
-
-                                @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    @error('name')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
                 </div>
-            </div>
+                {{--Name Input Group END--}}
+
+                {{--Surname Input Group END--}}
+                <div class="form-group">
+                    <label for="surname">{{ ucfirst(__('titles.surname')) }}</label>
+                    <input id="surname"
+                           type="text"
+                           name="surname"
+                           value="{{ old('surname') }}"
+                           required
+                           autocomplete="surname">
+
+                    @error('surname')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
+                </div>
+                {{--Surname Input Group END--}}
+
+                {{--Email Input Group START--}}
+                <div class="form-group">
+                    <label for="email">{{ ucfirst(__('titles.email')) }}</label>
+                    <input id="email"
+                           type="email"
+                           name="email"
+                           value="{{ old('email') }}"
+                           required
+                           autocomplete="email">
+
+                    @error('email')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
+                </div>
+                {{--Email Input Group END--}}
+
+                {{--Phone Number Input Group STARt--}}
+                <div class="form-group">
+                    <label for="phone-number">{{ ucfirst(__('titles.phone-number')) . ' (' . __('titles.optional') . ')' }}</label>
+                    <input id="phone-number"
+                           type="text"
+                           name="phone-number"
+                           value="{{ old('phone-number') }}"
+                           autocomplete="phone-number">
+
+                    @error('phone-number')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
+                </div>
+                {{--Phone Number Input Group END--}}
+
+                {{--Address Input Group START--}}
+                <div class="form-group">
+                    <label for="address">{{ ucfirst(__('titles.address')) . ' (' . __('titles.optional') . ')' }}</label>
+                    <input id="address"
+                           type="text"
+                           name="address"
+                           value="{{ old('address') }}"
+                           autocomplete="address">
+
+                    @error('address')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
+                </div>
+                {{--Address Input Group END--}}
+
+                {{--Password Input Group START--}}
+                <div class="form-group">
+                    <label for="password">{{ ucfirst(__('titles.password')) }}</label>
+                    <input id="password"
+                           type="password"
+                           name="password"
+                           required
+                           autocomplete="new-password">
+
+                    @error('password')
+                    <small>{{ ucfirst($message) }}</small>
+                    @enderror
+                </div>
+                {{--Password Input Group END--}}
+
+                {{--Password Repeat Input Group START--}}
+                <div class="form-group">
+                    <label for="password-confirm">{{ ucfirst(__('titles.repeat_password')) }}</label>
+                    <input id="password-confirm"
+                           type="password"
+                           class="form-control"
+                           name="password_confirmation"
+                           required
+                           autocomplete="new-password">
+                </div>
+                {{--Password Repeat Input Group END--}}
+
+                {{--Submit Button START--}}
+                <div class="form-group">
+                    <button type="submit">
+                        {{ ucfirst(__('titles.register')) }}
+                    </button>
+                </div>
+                {{--Submit Button END--}}
+
+            </form>
+            {{--Register Form END--}}
+
         </div>
     </div>
-</div>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeedbackTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateFeedbackTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedback', function (Blueprint $table) {
-            $table->charset = 'utf8';
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->bigInteger('user_id');
-            $table->text('comment');
+            $table->string('title');
+            $table->string('url');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateFeedbackTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('services');
     }
 }

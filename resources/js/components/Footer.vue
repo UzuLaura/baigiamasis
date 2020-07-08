@@ -1,13 +1,15 @@
 <template>
     <footer>
-        I'm footer.
+        © {{ this.date.getFullYear() }}. Laura Užusienė, visos teisės saugomos.
     </footer>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Footer')
+        data: function () {
+            return {
+                date: new Date()
+            }
         }
     }
 </script>

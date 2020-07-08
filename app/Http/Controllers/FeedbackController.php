@@ -2,83 +2,93 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class FeedbackController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Return Feedback View with Comments from DB.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('pages.feedback');
+        $feedbacks = Feedback::join('users', 'users.id', '=', 'feedback.user_id')
+            ->select('users.name', 'feedback.comment', 'feedback.created_at')
+            ->get();
+
+        return view('pages.feedback')->with([
+            'feedbacks' => $feedbacks
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Validate Comment Request before sending to DB
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return bool|\Illuminate\Support\MessageBag
      */
-    public function create()
+    public function validationRules(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'comment' => ['required', 'max:500']
+        ]);
+
+        if ($validator->fails()) {
+            return $validator->errors();
+        }
+
+        return true;
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create and Store new Comment in DB.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
+     * @return Feedback
+     */
+    public function create(Request $request)
+    {
+        $feedback = new Feedback();
+        $feedback->user_id = Auth::id();
+        $feedback->comment = $request->json('comment');
+        $feedback->name = Auth::user()->name;
+
+        $feedback->save();
+
+        return $feedback;
+    }
+
+    /**
+     * Return JSON Response and store Comment in DB
+     * if validation passes.
+     *
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
-    }
+        // Validate form request
+        $validation = $this->validationRules($request);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        // Set response for JSON
+        $response = [
+            'fail' => $validation
+        ];
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if ($validation === true && auth()->user()) {
+            // Create new comment
+            $feedback = $this->create($request);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+            // Reset response for JSON
+            $response = [
+                'success' => $feedback
+            ];
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return response()->json($response);
     }
 }

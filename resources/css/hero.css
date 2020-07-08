@@ -1,0 +1,6 @@
+.hero {
+    height: 300px;
+    width: 100%;
+    background: black url("../images/24744.jpg") no-repeat center;
+    background-size: cover;
+}

@@ -1,13 +1,9 @@
 @extends('main')
 
-@section('content')
-    {{--Feedback Table START--}}
-    <vue-feedback-table></vue-feedback-table>
-    {{--Feedback Table END--}}
+@section('title', ' | ' . __('titles.feedback'))
 
-    @auth()
-        {{--Feedback Form START--}}
-        <vue-feedback-form></vue-feedback-form>
-        {{--Feedback Form END--}}
-    @endauth
+@section('content')
+    <div class="wrapper">
+        <vue-feedback :feedbacks="{{ json_encode($feedbacks) }}" :user="{{ json_encode(auth()->user()) }}"></vue-feedback>
+    </div>
 @endsection

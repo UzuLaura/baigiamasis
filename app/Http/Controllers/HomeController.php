@@ -2,27 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Services;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
+     * Show Index Page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('pages.index');
+        return view('pages.index')->with([
+            'services' => $this->getServices()
+        ]);
+    }
+
+    /**
+     * Get data from DB Services table
+     *
+     * @return mixed
+     */
+    public function getServices()
+    {
+        return Services::take(3)->inRandomOrder()->get();
     }
 }

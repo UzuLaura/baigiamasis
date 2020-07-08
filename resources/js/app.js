@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 window.Vue = require('vue');
 
@@ -25,8 +25,7 @@ Vue.component('vue-hero', require('./components/Hero.vue').default);
 Vue.component('vue-service-card', require('./components/Cards/Service.vue').default);
 Vue.component('vue-map', require('./components/Map.vue').default);
 
-Vue.component('vue-feedback-form', require('./components/Forms/Feedback.vue').default);
-Vue.component('vue-feedback-table', require('./components/Tables/Feedback.vue').default);
+Vue.component('vue-feedback', require('./components/Feedback.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,5 +34,5 @@ Vue.component('vue-feedback-table', require('./components/Tables/Feedback.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#app'
 });
